@@ -1,7 +1,7 @@
 # Apori_social_media_Implementation
 Implémentation des fonctionnalités basiques d'un réseau social.
 
-Dans le cadre de notre projet visant à la réalisation d’un réseau social nous avons décidé de créer Apori, un réseau social à destination des passionnés de sport nautique. Partage d’une passion commune, de bonnes pratiques, de spots de glisse seront au rendez vous sur la première version que nous proposerons début d’année 2021. Au-delà d’un réseau social,Apori sera amené à devenir un outil indispensable pour les pratiques en mer, avec l’ajout de modules tel que la visibilité des marées, l’accès à des services météorologiques locaux, la mise en place d’un signalement de vague forte, …
+
 
 ## Objectifs
 
@@ -11,8 +11,17 @@ Notre but est donc de leur proposer un espace de partage qui leur est dédié et
 
 Mais notre premier objectif reste de viser cette communauté et ces loisirs au sein de notre réseau social afin de permettre également un meilleur ciblage pour les publicités et la possibilité pour les sponsors de dénicher des talents ou de promouvoir plus facilement leurs produits.
 
-## Cibles
 
-Comme nous l'avons vu précédemment, la première de nos cibles représente les adeptes des sports nautiques et désirant partager leur passion sur les réseaux sociaux.
 
-Notre seconde cible sera les entreprises vendant des produits liés à ces activités. Au travers de notre ciblage nous leur permettons de réaliser des campagnes publicitaires plus pertinentes et plus enclin à fonctionner.
+## Présentation des differents microservices
+
+### Keycloak
+
+
+### UserService
+
+
+### PublicationService 
+
+
+### MessagerieService
