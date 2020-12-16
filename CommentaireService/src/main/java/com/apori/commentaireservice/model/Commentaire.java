@@ -19,7 +19,5 @@ public class Commentaire {
 	
 	@Size(max = 200)
 	private String contenu;
-	
-	private Integer idUser; 
 
 }

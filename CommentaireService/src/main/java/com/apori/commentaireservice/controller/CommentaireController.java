@@ -23,6 +23,8 @@ public class CommentaireController {
 	
 	private CommentaireDAO commentaireDAO;
 	
+//	Retourne l'ensemble des commentaires
+	
 	@GetMapping(path = "/AllCommentaires")
 	public @ResponseBody Iterable<Commentaire> getAllCommentaire(HttpServletRequest request,HttpServletResponse response){
 		List<Commentaire> CommentaireList = (List<Commentaire>) commentaireDAO.findAll();
@@ -33,6 +35,8 @@ public class CommentaireController {
 			return null;
 		}
      }
+	
+//	Mise à jour d'un commentaire 
 	
 	public ResponseEntity<HttpStatus> updateCommentaire(HttpServletRequest request,@PathVariable Integer idCommentaire ,@PathVariable String content){
 		
@@ -47,4 +51,7 @@ public class CommentaireController {
 			return new ResponseEntity<HttpStatus>(HttpStatus.NOT_MODIFIED);
 		}
 	}
+	
+//	Ajouter un commentaire 
+	
 }
