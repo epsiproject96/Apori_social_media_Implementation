@@ -13,12 +13,10 @@
 	<version>0.0.1-SNAPSHOT</version>
 	<name>CommentaireService</name>
 	<description>Implementation du service en charge des commentaire</description>
-
+	
 	<properties>
 		<java.version>11</java.version>
-		<spring-cloud.version>Hoxton.SR1</spring-cloud.version>
 	</properties>
-
 
 	<dependencies>
 		<dependency>
@@ -74,30 +72,7 @@
 		   <version>6.1.6.Final</version>
 		</dependency>
 		
-		<dependency>
-            <groupId>org.springframework.cloud</groupId>
-            <artifactId>spring-cloud-starter</artifactId>
-        </dependency>
-		
-		<dependency>
-			<groupId>org.springframework.cloud</groupId>
-			<artifactId>spring-cloud-starter-netflix-eureka-client</artifactId>
-		</dependency>
-		
 	</dependencies>
-	
-	<dependencyManagement>
-		<dependencies>
-			<dependency>
-				<groupId>org.springframework.cloud</groupId>
-				<artifactId>spring-cloud-dependencies</artifactId>
-				<version>${spring-cloud.version}</version>
-				<type>pom</type>
-				<scope>import</scope>
-			</dependency>
-		</dependencies>
-	</dependencyManagement>
-
 
 	<build>
 		<plugins>

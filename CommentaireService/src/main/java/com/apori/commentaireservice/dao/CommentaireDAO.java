@@ -8,5 +8,4 @@ import org.springframework.data.repository.CrudRepository;
 
 @Repository
 public interface CommentaireDAO extends CrudRepository<Commentaire,Integer> {
-
 }
