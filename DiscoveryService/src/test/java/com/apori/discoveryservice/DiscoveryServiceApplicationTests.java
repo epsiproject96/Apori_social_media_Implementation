@@ -1,11 +1,10 @@
-package com.apori.commentaireservice;
+package com.apori.discoveryservice;
 
 import org.junit.jupiter.api.Test;
 import org.springframework.boot.test.context.SpringBootTest;
 
-
 @SpringBootTest
-class CommentaireServiceApplicationTests {
+class DiscoveryServiceApplicationTests {
 	@Test
 	void contextLoads() {
 	}

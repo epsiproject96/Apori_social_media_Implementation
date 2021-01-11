@@ -13,7 +13,7 @@
 	<version>0.0.1-SNAPSHOT</version>
 	<name>CommentaireService</name>
 	<description>Implementation du service en charge des commentaire</description>
-
+	
 	<properties>
 		<java.version>11</java.version>
 	</properties>
@@ -71,6 +71,7 @@
 		   <artifactId>hibernate-validator</artifactId>
 		   <version>6.1.6.Final</version>
 		</dependency>
+		
 	</dependencies>
 
 	<build>
