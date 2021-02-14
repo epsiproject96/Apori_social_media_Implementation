@@ -5,8 +5,7 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.Optional;
 
-
-
+import org.modelmapper.ModelMapper;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.MediaType;
@@ -28,30 +27,27 @@ import com.google.common.reflect.TypeToken;
 @RestController
 @RequestMapping(path = "Publications/{idPublication}/Commentaires")
 public class CommentaireController {
-	
+
 	@Autowired
-	private CommentaireService commentaireService;
+	private CommentaireService commentaireService;	
 	
 //	Retourne les commentaires d'une publication
 	@GetMapping(produces = {MediaType.APPLICATION_JSON_VALUE} )
 	public List<CommentaireResponse> PublicationCommentaires(Integer idPublication) {
-		List<CommentaireResponse> returnValue = new ArrayList<>();
-		
+		List<CommentaireResponse> returnValue = new ArrayList<>();	
 		List<Commentaire> CommentairesList = commentaireService.getPublicationComments(idPublication);
 		
 		if(CommentairesList == null || CommentairesList.isEmpty() ) {
 			return returnValue;
 		}
 		else {
-			Type listType = new TypeToken<List<CommentaireResponse>>(){}.getType();
-			
-//			modelMapper modelMapper = new ModelMapper();
-//			
-//			returnValue = modelMapper().map(CommentairesList, listType);
-
+			Type listType = new TypeToken<List<CommentaireResponse>>(){}.getType();			
+ 			ModelMapper modelMapper = new ModelMapper();
+			returnValue = modelMapper.map(CommentairesList, listType);
 			return returnValue;
 		}
 	}
+	
 	
 }
 

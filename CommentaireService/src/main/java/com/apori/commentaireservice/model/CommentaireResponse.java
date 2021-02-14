@@ -1,29 +1,46 @@
 package com.apori.commentaireservice.model;
 
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
-import javax.persistence.Id;
-import javax.validation.constraints.Size;
 
-import lombok.AllArgsConstructor;
-import lombok.Data;
-import lombok.NoArgsConstructor;
-
-@Data
-@NoArgsConstructor
-@AllArgsConstructor
-@Entity
 public class CommentaireResponse {
-	@Id
-	@GeneratedValue(strategy = GenerationType.IDENTITY)
+
 	private Integer idCommentaire;
 	
 	private Integer idPublication;
 	
 	private Integer idUser;
 	
-	@Size(max = 200)
 	private String contenu;
+
+	public Integer getIdCommentaire() {
+		return idCommentaire;
+	}
+
+	public void setIdCommentaire(Integer idCommentaire) {
+		this.idCommentaire = idCommentaire;
+	}
+
+	public Integer getIdPublication() {
+		return idPublication;
+	}
+
+	public void setIdPublication(Integer idPublication) {
+		this.idPublication = idPublication;
+	}
+
+	public Integer getIdUser() {
+		return idUser;
+	}
+
+	public void setIdUser(Integer idUser) {
+		this.idUser = idUser;
+	}
+
+	public String getContenu() {
+		return contenu;
+	}
+
+	public void setContenu(String contenu) {
+		this.contenu = contenu;
+	}
 }
 
