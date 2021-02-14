@@ -5,10 +5,7 @@
  */
 pipeline {
 
-    agent { label 'maven && java8' }
-
     environment {
-        sonarHostUrl = 'http://sonar.socrate.vsct.fr/'
         team_email= 'malembedidier24@gmail.com'
         BRANCH_MASTER= 'master'
     }
