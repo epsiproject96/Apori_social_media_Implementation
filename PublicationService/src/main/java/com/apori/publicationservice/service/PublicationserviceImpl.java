@@ -29,7 +29,6 @@ public class PublicationserviceImpl implements Publicationservice{
 	//Ajouter une publication
 	public void addPublication(Publication publication){
 		publicationDAO.save(publication);
-		
 	}
 
 }
