@@ -22,6 +22,8 @@ public class Publication {
 	@Size(max =120)
 	private String title;
 	
+	private Long idUser;
+	
 	@Size(max =120)
 	private String content;
 	
