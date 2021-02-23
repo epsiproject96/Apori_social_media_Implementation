@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ProjectModuleManager">
+    <modules>
+      <module fileurl="file://$PROJECT_DIR$/ApiGateway/ApiGateway.iml" filepath="$PROJECT_DIR$/ApiGateway/ApiGateway.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/Apori_social_media_Implementation.iml" filepath="$PROJECT_DIR$/.idea/Apori_social_media_Implementation.iml" />
+      <module fileurl="file://$PROJECT_DIR$/CommentaireService/CommentaireService.iml" filepath="$PROJECT_DIR$/CommentaireService/CommentaireService.iml" />
+      <module fileurl="file://$PROJECT_DIR$/DiscoveryService/DiscoveryService.iml" filepath="$PROJECT_DIR$/DiscoveryService/DiscoveryService.iml" />
+      <module fileurl="file://$PROJECT_DIR$/MessagerieService/MessagerieService.iml" filepath="$PROJECT_DIR$/MessagerieService/MessagerieService.iml" />
+      <module fileurl="file://$PROJECT_DIR$/PublicationService/PublicationService.iml" filepath="$PROJECT_DIR$/PublicationService/PublicationService.iml" />
+      <module fileurl="file://$PROJECT_DIR$/UserService/UserService.iml" filepath="$PROJECT_DIR$/UserService/UserService.iml" />
+    </modules>
+  </component>
+</project>

@@ -1,0 +1,34 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  labels:
+    k8s-app: $CI_PROJECT_NAME
+  name: $CI_PROJECT_NAME
+  namespace: $NAMESPACE
+
+spec:
+  selector:
+    matchLabels:
+      k8s-app: $CI_PROJECT_NAME
+  template:
+    metadata:
+      labels:
+        k8s-app: $CI_PROJECT_NAME
+      name: $CI_PROJECT_NAME
+    spec:
+      containers:
+        - env:
+            - name: HOST
+              value: "$HUBLOT_HOST"
+            - name: PORT
+              value: "$HUBLOT_PORT"
+            - name: PG_HOST
+              value: "$HUBLOT_PG_HOST"
+            - name: CUSTOMER_URL
+              value: "$HUBLOT_CUSTOMER_URL"
+            - name: PG_DATABASE
+              value: "$HUBLOT_SMS_PG_DATABASE"
+            - name: PG_USER
+              value: "$HUBLOT_IMAGE_PG_USER"
+            - name: PG_PASSWORD
+              value: Octave@01

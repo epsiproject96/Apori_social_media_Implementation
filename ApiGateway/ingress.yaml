@@ -1,0 +1,23 @@
+apiVersion: extensions/v1
+kind: Ingress
+metadata:
+  annotations:
+    cert-manager.io/cluster-issuer: letsenscrypt-prod
+    kubernetes.io/ingress.class: nginx
+  generation: 10
+  name: $CI_PROJECT_NAME
+  namespace: $NAMESPACE
+
+spec:
+  rules:
+    - host: $HUBLOT_API_URL
+      http:
+        paths:
+            - backend:
+                serviceName: $CI_PROJECT_NAME
+                servicePORT: $HUBLOT_PORT
+              path: $HUBLOT_INFO_PATH
+  tls:
+    - hosts:
+        - $HUBLOT_API_URL
+      secretName: $HUBLOT_API_URL-tls

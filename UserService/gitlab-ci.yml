@@ -1,0 +1,36 @@
+stages:
+  - build
+  - deploy_dev
+  - deploy
+
+variables:
+  CONTAINER_IMAGE: registry.gitlab.hublot.io/$CI_PROJECT_NAMESPACE/$CI_PROJECT_NAME:sCI_COMMIT_SHA
+
+build:
+  stage: build
+  script:
+    - docker build -t $CONTAINER_IMAGE .
+    - docker login -u $CI_REGISTRY_USER -p $CI_REGISTRY_PASSWORD $CI_REGISTRY && docker push $CONTAINER_IMAGE
+
+    deploy:
+      stage: deploy
+      script:
+        - mkdir -p $HOME/.kube
+        - echo -n $KUBE_CONFIG | base64 -d > $HOME/.kube/config
+        - export HUBLOT_API_URL=$HUBLOT_API_URL_PROD
+        - export NAMESPACE=$HUBLOT_NAMESPACE_PROD
+        - export HUBLOT_CUSTOMER_URL=$HUBLOT_CUSTOMER_URL_PROD
+        - envsubst < k8s/service.yaml > "service.yaml"
+        - envsubst < k8s/ingress.yaml > "ingress.yaml"
+        - envsubst < k8s/deployment.yaml > "deployment.yaml"
+        - echo -n $KUBECONFIG > $HOME/.kube/config
+        - cat $KUBECONFIG
+        - kubectl apply -f deployment.yaml --insecure-skip-tls-verify
+        - kubectl apply -f service.yaml --insecure-skip-tls-verify
+        - kubectl apply -f ingress.yaml --insecure-skip-tls-verify
+      environment:
+        name: production
+        kubernetes:
+          namespace: $HUBLOT_NAMESPACE_PROD
+      only:
+        -master

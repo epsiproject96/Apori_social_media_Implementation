@@ -1,0 +1,11 @@
+apiVersion: v1
+kind: Service
+metadata:
+  name: publicationservice
+spec:
+  selector:
+    app: APORI
+  ports:
+    - protocol: TCP
+      port: 0
+      targetPort: 9376
