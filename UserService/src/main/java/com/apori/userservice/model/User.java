@@ -34,6 +34,7 @@ public class User {
 	@NotBlank
 	@Size( max =50)
 	private String username;
+	//example commit
 	
 	@NotBlank
 	@Size( max =50 )
